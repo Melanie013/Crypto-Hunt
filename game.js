@@ -2,19 +2,18 @@ class Game {
     constructor (){
         this.background = new Background ()
         this.player = new Player ()
-        // this.obstacle = new Obstacle ()
         this.backgroundImages = []
         this.playerImage = ''
         this.obstacle = []
-        // this.coinImage = ''
+        this.score = 0
 
     }
 
 
     draw() {
+        console.log('score: ', this.score)
         this.background.draw()
         this.player.draw()
-       // this.obstacle.draw()
 
         if(frameCount % 150 === 0) {
             this.obstacle.push(new Obstacle(this.coinImage))
@@ -26,17 +25,24 @@ class Game {
             obstacle.draw()
         })
 
+        this.obstacle.map(obstacle => {
+            if (!obstacle.collision(this.player)) {
+                this.score += 1
+            }
+        })
+
+        
+
 
 		this.obstacle = this.obstacle.filter(obstacle => {
 			if (obstacle.collision(this.player) || obstacle.x < 0) {
-                console.log(obstacle.collision(this.player))
+                console.log('collision state',obstacle.collision(this.player))
 				return true
 			} else {
                 console.log(obstacle.collision(this.player))
 				return false
                 
 			}
-
 
 
     })
@@ -58,8 +64,8 @@ class Game {
 
         this.playerImage = loadImage('/Images/Pig.png')
         this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
-        this.coinImageTwo = loadImage('/Images/Ethereum-removebg-preview.png')
-        // this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
+       // this.coinImageTwo = loadImage('/Images/Ethereum-removebg-preview.png')
+        this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
     }
 
 }

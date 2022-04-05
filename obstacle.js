@@ -1,5 +1,5 @@
 class Obstacle {
-    constructor(image){
+    constructor(){
 
         this.image = image
         this.x = 1200
@@ -10,14 +10,19 @@ class Obstacle {
     }
 
     collision(playerInfo){
-        console.log('collision', playerInfo)
+       // console.log('collision', playerInfo)
         const obstacleX = this.x + this.coinWidth / 2
         const obstacleY = this.y + this.coinHeight / 2
         const playerX = playerInfo.x + playerInfo.width / 2
         const playerY = playerInfo.y + playerInfo.height / 2
         if (dist(obstacleX, obstacleY, playerX, playerY) > 60) {
+            
+            
+            // document.getElementById('score').innerHTML =`Score: ${game.score}`
+
 			return true
 		} else {
+            
 			return false
 		}
 
@@ -34,7 +39,4 @@ class Obstacle {
 
     } 
 
-
-
 }
-
