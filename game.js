@@ -16,7 +16,7 @@ class Game {
         this.player.draw()
        // this.obstacle.draw()
 
-        if(frameCount % 90 === 0) {
+        if(frameCount % 150 === 0) {
             this.obstacle.push(new Obstacle(this.coinImage))
 
             // console.log(this.obstacle)
@@ -30,10 +30,10 @@ class Game {
 		this.obstacle = this.obstacle.filter(obstacle => {
 			if (obstacle.collision(this.player) || obstacle.x < 0) {
                 console.log(obstacle.collision(this.player))
-				return false
+				return true
 			} else {
                 console.log(obstacle.collision(this.player))
-				return true
+				return false
                 
 			}
 
@@ -58,7 +58,7 @@ class Game {
 
         this.playerImage = loadImage('/Images/Pig.png')
         this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
-        // this.coinImageTwo = loadImage('/Images/Ethereum-removebg-preview.png')
+        this.coinImageTwo = loadImage('/Images/Ethereum-removebg-preview.png')
         // this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
     }
 
