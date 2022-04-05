@@ -5,6 +5,7 @@ class Game {
         this.backgroundImages = []
         this.playerImage = ''
         this.obstacle = []
+        this.obstacle2 = []
         this.score = 0
 
     }
@@ -15,8 +16,14 @@ class Game {
         this.background.draw()
         this.player.draw()
 
-        if(frameCount % 150 === 0) {
-            this.obstacle.push(new Obstacle(this.coinImage))
+        if(frameCount % 300 === 0) {
+            this.obstacle.push(new Obstacle(this.coinImage, 90, 90))
+
+            // console.log(this.obstacle)
+        }
+
+        if(frameCount % 200 === 0) {
+            this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80))
 
             // console.log(this.obstacle)
         }
@@ -25,13 +32,44 @@ class Game {
             obstacle.draw()
         })
 
-        this.obstacle.map(obstacle => {
-            if (!obstacle.collision(this.player)) {
-                this.score += 1
-            }
+        this.obstacle2.forEach(function(obstacle) {
+            obstacle.draw()
         })
 
-        
+        this.obstacle.map(obstacle => {
+            if (!obstacle.collision(this.player)) {
+                this.score += 10
+                document.getElementById('score').innerText =`Score: ${game.score}`
+
+            }
+
+        })
+
+
+        this.obstacle2.map(obstacle2 => {
+            if (!obstacle2.collision(this.player)) {
+                this.score += 2
+                document.getElementById('score').innerText =`Score: ${game.score}`
+
+            }
+
+        })
+
+
+        this.obstacle2 = this.obstacle2.filter(obstacle => {
+			if (obstacle.collision(this.player) || obstacle.x < 0) {
+                console.log('collision state',obstacle.collision(this.player))
+				return true
+			} else {
+                console.log(obstacle.collision(this.player))
+				return false
+                
+			}
+
+
+    })
+
+
 
 
 		this.obstacle = this.obstacle.filter(obstacle => {
@@ -64,8 +102,8 @@ class Game {
 
         this.playerImage = loadImage('/Images/Pig.png')
         this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
-       // this.coinImageTwo = loadImage('/Images/Ethereum-removebg-preview.png')
-        this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
+        this.coinImageTwo = loadImage('/Images/ethereum2.png')
+        //this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
     }
 
 }

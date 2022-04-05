@@ -1,11 +1,12 @@
 class Obstacle {
-    constructor(){
+    constructor(image, coinWidth, coinHeight){
 
         this.image = image
         this.x = 1200
         this.y = random(500)
-        this.coinWidth = 70
-        this.coinHeight = 70
+        this.coinWidth = coinWidth
+        this.coinHeight = coinHeight        
+
 
     }
 
@@ -18,7 +19,6 @@ class Obstacle {
         if (dist(obstacleX, obstacleY, playerX, playerY) > 60) {
             
             
-            // document.getElementById('score').innerHTML =`Score: ${game.score}`
 
 			return true
 		} else {
@@ -33,8 +33,8 @@ class Obstacle {
     draw(){
 
        
-        this.x--
-        image(game.coinImage, this.x, this.y, this.coinWidth ,this.coinHeight)
+        this.x-= 5
+        image(this.image, this.x, this.y, this.coinWidth ,this.coinHeight)
         
 
     } 
