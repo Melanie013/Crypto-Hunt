@@ -1,14 +1,36 @@
 canvas {
 
     background-color: lightgoldenrodyellow;
-    margin: 50px 50px;
 
 
 }
 
-.container {
+.containerOne {
 
-    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
 
 }
+
+
+.containerTwo {
+
+    width: 1200px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    font-family: Orbitron;
+    font-weight: 700;
+
+}
+
+
 

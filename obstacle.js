@@ -33,7 +33,7 @@ class Obstacle {
     draw(){
 
        
-        this.x-= 5
+        this.x--
         image(this.image, this.x, this.y, this.coinWidth ,this.coinHeight)
         
 
