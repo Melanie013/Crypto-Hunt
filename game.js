@@ -152,19 +152,19 @@ class Game {
     preload () {
         this.backgroundImages = [
 
-            {src: loadImage ('assets/back.png'), x: 0, speed: 0 }, 
-            {src: loadImage ('assets/sun.png'), x: 0, speed: 1 },
-            {src: loadImage ('assets/buildings.png'), x: 0, speed: 2 },
-            {src: loadImage ('assets/palms.png'), x: 0, speed: 4 },          
-            {src: loadImage ('assets/highway.png'), x: 0, speed: 5 },
+            {src: loadImage ('Images/back.png'), x: 0, speed: 0 }, 
+            {src: loadImage ('Images/sun.png'), x: 0, speed: 1 },
+            {src: loadImage ('Images/buildings.png'), x: 0, speed: 2 },
+            {src: loadImage ('Images/palms.png'), x: 0, speed: 4 },          
+            {src: loadImage ('Images/highway.png'), x: 0, speed: 5 },
 
 
         ]
 
-        this.playerImage = loadImage('assets/Pig.png')
-        this.coinImage = loadImage('assets/bitcoin_pixel_2-removebg-preview.png')
-        this.coinImageTwo = loadImage('assets/ethereum2.png')
-        this.bankImage = loadImage('assets/bank_2-removebg-preview.png')        
+        this.playerImage = loadImage('Images/Pig.png')
+        this.coinImage = loadImage('Images/bitcoin_pixel_2-removebg-preview.png')
+        this.coinImageTwo = loadImage('Images/ethereum2.png')
+        this.bankImage = loadImage('Images/bank_2-removebg-preview.png')        
     }
 
 }
