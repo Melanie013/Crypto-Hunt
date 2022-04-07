@@ -172,7 +172,7 @@ gameOver(){
  
     preload () {
 
-        this.backgroundMusic = createAudio ('sound/let-the-games-begin-21858.mp3')
+        this.backgroundMusic = createAudio ('sound/mrplastic-jump-11138.mp3')
 
         this.backgroundImages = [
 
