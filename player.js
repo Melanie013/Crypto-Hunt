@@ -35,12 +35,12 @@ class Player {
 
     }
     moveLeft(){
-        this.x -= 50;
+        this.x -= 70;
       
       }
       
       moveRight(){
-        this.x += 50;
+        this.x += 70;
       }
 
 }

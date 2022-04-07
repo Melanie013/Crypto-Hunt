@@ -20,13 +20,13 @@ class Game {
         this.background.draw()
         this.player.draw()
 
-        if(frameCount % 250 === 0) {
+        if(frameCount % 180 === 0) {
             this.obstacle.push(new Obstacle(this.coinImage, 90, 90, 8))
 
             // console.log(this.obstacle)
         }
 
-        if(frameCount % 150 === 0) {
+        if(frameCount % 70 === 0) {
             this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80, 9))
 
             // console.log(frameCount)
@@ -101,7 +101,7 @@ class Game {
 
 
 
-         if(frameCount % 400 === 0) {                       // Bank
+         if(frameCount % 230 === 0) {                       // Bank
             this.banksArr.push(new Bank(this.bankImage))
 
             // console.log(this.obstacle)
