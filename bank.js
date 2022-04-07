@@ -1,9 +1,9 @@
 class Bank {
     constructor(){
         this.x = 1200
-        this.y = 500
-        this.width = 300
-        this.height = 150
+        this.y = 400
+        this.width = 400
+        this.height = 250
         // this.speed = 10
     }
 

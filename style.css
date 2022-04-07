@@ -1,7 +1,6 @@
 canvas {
 
     background-color: lightgoldenrodyellow;
-    filter: drop-shadow();
 
 
 }
@@ -48,8 +47,8 @@ canvas {
     color: white;
     font-family: Orbitron;
     position: absolute;
-    top: 150px;
-    right: 150px;
+    top: 3px;
+    right: 20px;
     
 
 }
@@ -58,7 +57,7 @@ canvas {
 
     width: 1200px;
     height: 700px;
-    border: red solid 3px;
+    /*border: red solid 3px;*/
     position: relative;
 
 }

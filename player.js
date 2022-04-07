@@ -5,7 +5,7 @@ class Player {
         this.height = 160
         this.x = 120
         this.y = 470
-        this.gravity = 0.2
+        this.gravity = 0.25
         this.velocity = 0
     }
 
@@ -29,10 +29,18 @@ class Player {
 
     jump() {
 
-        this.velocity = -11
-        //if()
-        //}
+        this.velocity = -12
+        
+        
 
     }
+    moveLeft(){
+        this.x -= 50;
+      
+      }
+      
+      moveRight(){
+        this.x += 50;
+      }
 
 }

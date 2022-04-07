@@ -59,7 +59,7 @@ class Game {
         })
 
 
-        this.banksArr.map(banksArr => {                                       
+        /*this.banksArr.map(banksArr => {                                       
             if (!banksArr.collision(this.player)) {
                 this.lives -= 1
                 //document.getElementById('lives').innerText =`Lives: ${game.lives}`
@@ -68,7 +68,7 @@ class Game {
 
         })
         document.getElementById('lives').innerText =`Lives: ${game.lives}`
-        console.log(this.lives)
+        console.log(this.lives)*/
 
 
 
@@ -116,7 +116,7 @@ class Game {
         this.banksArr = this.banksArr.filter(bank => {
             if (!bank.collision(this.player)) {
                 // console.log('teffer');
-                this.lives -= 1
+                this.removeLife()
                 if(this.lives === 0) {
                     console.log('game over')
                 
@@ -133,10 +133,20 @@ class Game {
     
     
         })
-
     }  
-    console.log(game.player.y)
+
+
+    
+   // console.log(game.player.y)
 }
+
+
+    removeLife() {
+        this.lives -= 1
+        document.getElementById('livesContainer').removeChild(document.querySelector('.satoshi'))
+
+    }
+
     
  
     preload () {
@@ -155,7 +165,8 @@ class Game {
         this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
         this.coinImageTwo = loadImage('/Images/ethereum2.png')
         this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
-        this.livesImage = loadImage('/Images/Satoshi-removebg-preview.png') // satoshi face 
+        // this.livesImage = loadImage('/Images/Satoshi-removebg-preview.png') // satoshi face 
+        
     }
 
 }
