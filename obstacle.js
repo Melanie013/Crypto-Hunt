@@ -1,11 +1,12 @@
 class Obstacle {
-    constructor(image, coinWidth, coinHeight){
+    constructor(image, coinWidth, coinHeight, speed){
 
         this.image = image
         this.x = 1200
-        this.y = random(500)
+        this.y = random(500, 200)
         this.coinWidth = coinWidth
-        this.coinHeight = coinHeight        
+        this.coinHeight = coinHeight
+        this.speed = speed   
 
 
     }
@@ -33,7 +34,7 @@ class Obstacle {
     draw(){
 
        
-        this.x--
+        this.x -= this.speed
         image(this.image, this.x, this.y, this.coinWidth ,this.coinHeight)
         
 

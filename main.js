@@ -7,7 +7,9 @@ function preload (){
 
 function setup (){
     // console.log('This is the setup')
-    createCanvas(1200, 700);
+    let canvas = createCanvas(1200, 700);
+    canvas.class('canvasContainer');
+
 
 }
 
@@ -17,8 +19,7 @@ function draw (){
 }
 
 function keyPressed (){
-    if (keyCode === 32) {
+    if (keyCode === 32 && game.player.y === 470) {
         game.player.jump()
     }
-
 }

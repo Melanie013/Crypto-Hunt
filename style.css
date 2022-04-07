@@ -1,6 +1,7 @@
 canvas {
 
     background-color: lightgoldenrodyellow;
+    filter: drop-shadow();
 
 
 }
@@ -13,7 +14,7 @@ canvas {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    background-color: black;
 
 
 }
@@ -29,8 +30,35 @@ canvas {
     flex-direction: row;
     font-family: Orbitron;
     font-weight: 700;
+    color: white;
+    font-size: large;
 
 }
 
+#livesContainer img {
 
+    width: 50px;
+    height: 60px;
+    
 
+}
+
+#livesContainer {
+
+    color: white;
+    font-family: Orbitron;
+    position: absolute;
+    top: 150px;
+    right: 150px;
+    
+
+}
+
+.canvasContainer {
+
+    width: 1200px;
+    height: 700px;
+    border: red solid 3px;
+    position: relative;
+
+}

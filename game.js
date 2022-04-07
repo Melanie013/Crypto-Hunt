@@ -15,20 +15,21 @@ class Game {
 
 
     draw() {
+        if (this.lives > 0) {
         console.log('score: ', this.score)
         this.background.draw()
         this.player.draw()
 
-        if(frameCount % 350 === 0) {
-            this.obstacle.push(new Obstacle(this.coinImage, 90, 90))
+        if(frameCount % 250 === 0) {
+            this.obstacle.push(new Obstacle(this.coinImage, 90, 90, 6))
 
             // console.log(this.obstacle)
         }
 
-        if(frameCount % 200 === 0) {
-            this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80))
+        if(frameCount % 150 === 0) {
+            this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80, 7))
 
-            // console.log(this.obstacle)
+            // console.log(frameCount)
         }
 
         this.obstacle.forEach(function(obstacle) {
@@ -58,6 +59,20 @@ class Game {
         })
 
 
+        this.banksArr.map(banksArr => {                                       
+            if (!banksArr.collision(this.player)) {
+                this.lives -= 1
+                //document.getElementById('lives').innerText =`Lives: ${game.lives}`
+
+            }
+
+        })
+        document.getElementById('lives').innerText =`Lives: ${game.lives}`
+        console.log(this.lives)
+
+
+
+
         this.obstacle2 = this.obstacle2.filter(obstacle => {
 			if (obstacle.collision(this.player) || obstacle.x < 0) {
                // console.log('collision state',obstacle.collision(this.player))
@@ -69,7 +84,7 @@ class Game {
 			}
 
 
-    })
+         })
 
 		this.obstacle = this.obstacle.filter(obstacle => {
 			if (obstacle.collision(this.player) || obstacle.x < 0) {
@@ -82,50 +97,45 @@ class Game {
 			}
 
 
-    })
+        })
 
 
 
-    if(frameCount % 1500 === 0) {                       // Bank
-        this.banksArr.push(new Bank(this.bankImage))
+         if(frameCount % 400 === 0) {                       // Bank
+            this.banksArr.push(new Bank(this.bankImage))
 
-        // console.log(this.obstacle)
-    }
+            // console.log(this.obstacle)
+        }
 
-    this.banksArr.forEach(function(bank) {
+        this.banksArr.forEach(function(bank) {
         bank.draw()
-    })
-
-    
-
-    /*this.banksArr.forEach(function(bank) {
-        console.log(bank.collision(this.player))   
-        /*if (bank.collision(this.player)){
-            //this.lives = this.lives-1
-            console.log('-1live', this.lives)
-
-        }
-        })*/
+        })
     
 
 
-    this.banksArr = this.banksArr.filter(bank => {
-        if (bank.collision(this.player) || bank.x < 0) {
-            return true
-        } else {
-            return false
-            
-        }
-
-
-})
-
-
+        this.banksArr = this.banksArr.filter(bank => {
+            if (!bank.collision(this.player)) {
+                // console.log('teffer');
+                this.lives -= 1
+                if(this.lives === 0) {
+                    console.log('game over')
+                
+                    
+                }
+    
+            }
+            if (bank.collision(this.player) || bank.x < 0) {
+                return true
+            } else {
+                return false
+                
+            }
     
     
+        })
 
-    
-    
+    }  
+    console.log(game.player.y)
 }
     
  
@@ -134,9 +144,9 @@ class Game {
 
             {src: loadImage ('/Images/back.png'), x: 0, speed: 0 }, 
             {src: loadImage ('/Images/sun.png'), x: 0, speed: 1 },
-            {src: loadImage ('/Images/buildings.png'), x: 0, speed: 4 },
-            {src: loadImage ('/Images/palms.png'), x: 0, speed: 5 },          
-            {src: loadImage ('/Images/highway.png'), x: 0, speed: 6 },
+            {src: loadImage ('/Images/buildings.png'), x: 0, speed: 2 },
+            {src: loadImage ('/Images/palms.png'), x: 0, speed: 4 },          
+            {src: loadImage ('/Images/highway.png'), x: 0, speed: 5 },
 
 
         ]
@@ -145,6 +155,7 @@ class Game {
         this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
         this.coinImageTwo = loadImage('/Images/ethereum2.png')
         this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
+        this.livesImage = loadImage('/Images/Satoshi-removebg-preview.png') // satoshi face 
     }
 
 }

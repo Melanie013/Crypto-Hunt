@@ -29,7 +29,9 @@ class Player {
 
     jump() {
 
-        this.velocity = -10
+        this.velocity = -11
+        //if()
+        //}
 
     }
 
