@@ -3,7 +3,7 @@ class Obstacle {
 
         this.image = image
         this.x = 1200
-        this.y = random(500, 200)
+        this.y = random(500, 100)
         this.coinWidth = coinWidth
         this.coinHeight = coinHeight
         this.speed = speed   

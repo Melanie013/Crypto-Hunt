@@ -21,13 +21,13 @@ class Game {
         this.player.draw()
 
         if(frameCount % 250 === 0) {
-            this.obstacle.push(new Obstacle(this.coinImage, 90, 90, 6))
+            this.obstacle.push(new Obstacle(this.coinImage, 90, 90, 8))
 
             // console.log(this.obstacle)
         }
 
         if(frameCount % 150 === 0) {
-            this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80, 7))
+            this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80, 9))
 
             // console.log(frameCount)
         }
@@ -152,21 +152,19 @@ class Game {
     preload () {
         this.backgroundImages = [
 
-            {src: loadImage ('/Images/back.png'), x: 0, speed: 0 }, 
-            {src: loadImage ('/Images/sun.png'), x: 0, speed: 1 },
-            {src: loadImage ('/Images/buildings.png'), x: 0, speed: 2 },
-            {src: loadImage ('/Images/palms.png'), x: 0, speed: 4 },          
-            {src: loadImage ('/Images/highway.png'), x: 0, speed: 5 },
+            {src: loadImage ('assets/back.png'), x: 0, speed: 0 }, 
+            {src: loadImage ('assets/sun.png'), x: 0, speed: 1 },
+            {src: loadImage ('assets/buildings.png'), x: 0, speed: 2 },
+            {src: loadImage ('assets/palms.png'), x: 0, speed: 4 },          
+            {src: loadImage ('assets/highway.png'), x: 0, speed: 5 },
 
 
         ]
 
-        this.playerImage = loadImage('/Images/Pig.png')
-        this.coinImage = loadImage('/Images/bitcoin_pixel_2-removebg-preview.png')
-        this.coinImageTwo = loadImage('/Images/ethereum2.png')
-        this.bankImage = loadImage('/Images/bank_2-removebg-preview.png')
-        // this.livesImage = loadImage('/Images/Satoshi-removebg-preview.png') // satoshi face 
-        
+        this.playerImage = loadImage('assets/Pig.png')
+        this.coinImage = loadImage('assets/bitcoin_pixel_2-removebg-preview.png')
+        this.coinImageTwo = loadImage('assets/ethereum2.png')
+        this.bankImage = loadImage('assets/bank_2-removebg-preview.png')        
     }
 
 }
