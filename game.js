@@ -122,6 +122,8 @@ class Game {
                 
                     
                 }
+
+
     
             }
             if (bank.collision(this.player) || bank.x < 0) {
@@ -139,6 +141,17 @@ class Game {
     
    // console.log(game.player.y)
 }
+
+
+
+gameOver(){
+
+    fill(255,255,255)
+    textSize(90);
+    text('Game Over!', 350, 200)
+
+}
+
 
 
     removeLife() {
