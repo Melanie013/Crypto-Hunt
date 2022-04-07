@@ -49,6 +49,7 @@ canvas {
     position: absolute;
     top: 3px;
     right: 20px;
+    width: 160px;
     
 
 }
@@ -59,5 +60,20 @@ canvas {
     height: 700px;
     /*border: red solid 3px;*/
     position: relative;
+    
+
+}
+
+/*.fontClass {
+
+    color: rebeccapurple;
+
+}*/
+
+.gameOver{
+    font-family: Orbitron;
+    color: white;
+    position: absolute;
+    
 
 }

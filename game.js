@@ -13,20 +13,27 @@ class Game {
 
     }
 
+    setup(){
+        this.backgroundMusic.play()
+    }
+
 
     draw() {
+
+        this.backgroundMusic.loop()
+
         if (this.lives > 0) {
         console.log('score: ', this.score)
         this.background.draw()
         this.player.draw()
 
-        if(frameCount % 180 === 0) {
+        if(frameCount % 110 === 0) {
             this.obstacle.push(new Obstacle(this.coinImage, 90, 90, 8))
 
             // console.log(this.obstacle)
         }
 
-        if(frameCount % 70 === 0) {
+        if(frameCount % 60 === 0) {
             this.obstacle2.push(new Obstacle(this.coinImageTwo, 80, 80, 9))
 
             // console.log(frameCount)
@@ -101,7 +108,7 @@ class Game {
 
 
 
-         if(frameCount % 230 === 0) {                       // Bank
+         if(frameCount % 110 === 0) {                       // Bank
             this.banksArr.push(new Bank(this.bankImage))
 
             // console.log(this.obstacle)
@@ -146,6 +153,7 @@ class Game {
 
 gameOver(){
 
+
     fill(255,255,255)
     textSize(90);
     text('Game Over!', 350, 200)
@@ -163,6 +171,9 @@ gameOver(){
     
  
     preload () {
+
+        this.backgroundMusic = createAudio ('sound/let-the-games-begin-21858.mp3')
+
         this.backgroundImages = [
 
             {src: loadImage ('images/back.png'), x: 0, speed: 0 }, 

@@ -28,7 +28,7 @@ class Bank {
 
 
     draw(){
-        this.x -=10
+        this.x -=13
         image(game.bankImage, this.x, this.y, this.width, this.height)
 
     }
