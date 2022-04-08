@@ -13,12 +13,12 @@ function setup (){
 }
 
 function draw (){
-    if(game.lives > 0)
-    game.draw()
+        if(game.lives > 0)
+            game.draw()
 
-    else{
-    game.gameOver()
-    }    
+        else{
+            game.gameOver()
+        }    
 
 }
 

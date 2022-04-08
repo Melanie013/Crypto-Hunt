@@ -14,13 +14,17 @@ class Game {
     }
 
     setup(){
-        this.backgroundMusic.play()
+        if(this.lives > 0) {this.backgroundMusic.play()} 
+        else {this.backgroundMusic.stop()}
     }
 
 
     draw() {
 
         this.backgroundMusic.loop()
+
+        if(this.lives > 0) {this.backgroundMusic.play()} 
+        else {this.backgroundMusic.stop()}
 
         if (this.lives > 0) {
         console.log('score: ', this.score)
@@ -70,9 +74,7 @@ class Game {
             if (!banksArr.collision(this.player)) {
                 this.lives -= 1
                 //document.getElementById('lives').innerText =`Lives: ${game.lives}`
-
             }
-
         })
         document.getElementById('lives').innerText =`Lives: ${game.lives}`
         console.log(this.lives)*/
@@ -157,7 +159,6 @@ gameOver(){
     fill(255,255,255)
     textSize(90);
     text('Game Over!', 350, 200)
-
 }
 
 
