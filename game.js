@@ -172,7 +172,6 @@ gameOver(){
 
         this.backgroundMusic = createAudio ('sound/mrplastic-jump-11138.mp3')
 
-        this.font = loadFont('font/Orbitron-Bold.ttf')
 
         this.backgroundImages = [
 
